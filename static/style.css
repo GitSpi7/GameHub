@@ -1,0 +1,33 @@
+body {
+font-family: Arial, sans-serif;
+background: #f4f4f4;
+margin: 0;
+padding: 20px;
+}
+
+
+.container {
+max-width: 800px;
+margin: auto;
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+h1 { color: #333; text-align: center; }
+form { text-align: center; margin: 20px 0; }
+input[type="file"] { margin: 10px; }
+button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background: #0056b3; }
+
+
+.messages { background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin: 10px 0; }
+.games { list-style: none; padding: 0; }
+.games li { padding: 10px; border-bottom: 1px solid #eee; }
+.games a { margin: 0 5px; color: #007bff; text-decoration: none; }
+.games a:hover { text-decoration: underline; }
+
+
+iframe { border: 1px solid #ccc; border-radius: 5px; }

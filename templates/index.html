@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Python Игры</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Загрузка Python-игр</h1>
+
+
+<form method="post" action="/upload" enctype="multipart/form-data">
+<input type="file" name="file" accept=".py" required>
+<button type="submit">Загрузить</button>
+</form>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="messages">
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+<h2>Доступные игры:</h2>
+{% if games %}
+<ul class="games">
+{% for game in games %}
+<li>
+<strong>{{ game }}</strong>
+<a href="{{ url_for('play_game', filename=game) }}">Играть</a> |
+<a href="{{ url_for('download_game', filename=game) }}">Скачать</a>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>Пока нет загруженных игр.</p>
+{% endif %}
+</div>
+</body>
+</html>
